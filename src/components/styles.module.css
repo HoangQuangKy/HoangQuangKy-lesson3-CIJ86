@@ -84,6 +84,7 @@ p {
 }
 
 .btn {
+
     width: 250px;
     height: 50px;
     object-fit: contain;
@@ -93,6 +94,7 @@ p {
     align-items: center;
     text-align: center;
     border-radius: 15px;
+    color: black;
 
 }
 
@@ -175,4 +177,63 @@ h5 {
 h6 {
     margin: 0px;
     padding: 0px;
+}
+
+.btn1 {
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+    background-color: #28A744;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    color: white;
+}
+
+.productModal {
+    display: flex;
+    flex-direction: row;
+}
+
+.adv {
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.advNew {
+    color: white;
+    border-radius: 5px;
+    background-color: #28A744;
+    padding: 0px 5px 0px 5px;
+}
+
+.addToCart {
+    color: red;
+    border: 1px solid red;
+    padding: 15px 25px 15px 25px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+.productCart {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.btnQty {
+    border-radius: 0;
+    border: 1px solid gray;
+    font-size: 15px;
+}
+
+.piece {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }

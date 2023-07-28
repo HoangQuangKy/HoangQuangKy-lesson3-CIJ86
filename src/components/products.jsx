@@ -1,5 +1,8 @@
 import styles from './styles.module.css';
-import add from '/add.svg'
+import add from '/add.svg';
+import React from 'react';
+import { useState } from 'react';
+import ModalDetailProdcut from './ModalDetailProduct';
 let hotTrend = [
     {
         img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/product/829/dien-thoai-iphone-14-pro-max-128gb-tim-1.jpg",
@@ -52,6 +55,7 @@ let hotTrend = [
         rom: "16"
     }
 ]
+
 const updatedHotTrend = hotTrend.map(item => {
     const priceAfterDiscount = parseFloat(item.price.replace("đ", "").replace(",", ""));
     const discountPercentage = parseFloat(item.discount);
@@ -66,10 +70,43 @@ const updatedHotTrend = hotTrend.map(item => {
 console.log(updatedHotTrend);
 
 function Products() {
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [productDetail, setProductDetail] = useState({
+        img: "",
+        name: "",
+        price: "",
+        discount: "",
+        originalPrice: "",
+        quantity: 0,
+    });
+    const saveProductDetail = (product) => {
+        setProductDetail({
+            img: product.img,
+            name: product.name,
+            price: product.price,
+            discount: product.discount,
+            originalPrice: product.originalPrice,
+        });
+    };
+
+
+    function openModal() {
+        setIsOpen(true);
+    }
+
+    // function afterOpenModal() {
+    //     // references are now sync'd and can be accessed.
+    //     subtitle.style.color = '#f00';
+    // }
+
+    function closeModal() {
+        setIsOpen(false);
+    }
     return (
         <>
             <div className={`${styles.Content}`}>
-                <h3>TOP 10 ĐIỆN THOẠI ĐƯỢC YÊU THÍCH NHẤT</h3>
+                <h3 style={{ width: 1350, display: `flex`, textAlign: `center` }}>TOP 10 ĐIỆN THOẠI ĐƯỢC YÊU THÍCH NHẤT</h3>
                 <div className={`${styles.productList}`}>
                     {updatedHotTrend.map((product, index) => (
                         <div key={index} className={`${styles.product}`}>
@@ -88,13 +125,19 @@ function Products() {
                                 <img src={add} alt="" className={`${styles.Item}`} />
                                 Thêm vào danh sách
                             </a>
+                            <button className={`${styles.btn1}`} onClick={() => {
+                                saveProductDetail(product)
+                                openModal()
+                            }}>Show Details</button>
                         </div>
                     )
                     )}
 
                 </div>
             </div>
+            <ModalDetailProdcut isOpen={modalIsOpen} product={productDetail} isClose={closeModal}></ModalDetailProdcut>
         </>
     )
 }
+
 export default Products
