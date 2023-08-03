@@ -14,25 +14,25 @@ function Header2() {
                     <b>Danh mục sản phẩm</b>
                 </h3>
                 <div className={`${styles.HeaderItem}`}>
-                    <div className={`${styles.HeaderItem}`}>
+                    <div className={`${styles.HeaderItem3}`}>
                         <img src={truck} alt="" className={`${styles.Item}`} />
                         <div className={`${styles.ItemTitle}`}>
                             <h5>Giap lắp chuyên nghiệp</h5>
                         </div>
                     </div>
-                    <div className={`${styles.HeaderItem}`}>
+                    <div className={`${styles.HeaderItem3}`}>
                         <img src={tools} alt="" className={`${styles.Item}`} />
                         <div className={`${styles.ItemTitle}`}>
                             <h5>Bảo hành nhanh gọn</h5>
                         </div>
                     </div>
-                    <div className={`${styles.HeaderItem}`}>
+                    <div className={`${styles.HeaderItem3}`}>
                         <img src={book} alt="" className={`${styles.Item}`} />
                         <div className={`${styles.ItemTitle}`}>
                             <h5>Tổng hợp khuyến mãi</h5>
                         </div>
                     </div>
-                    <div className={`${styles.HeaderItem}`}>
+                    <div className={`${styles.HeaderItem3}`}>
                         <img src={gem} alt="" className={`${styles.Item}`} />
                         <div className={`${styles.ItemTitle}`}>
                             <h5 style={{ border: 'none' }}>Nguyễn Kim Luxury</h5>

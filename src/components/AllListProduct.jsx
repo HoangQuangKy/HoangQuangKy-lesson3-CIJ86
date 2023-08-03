@@ -2,9 +2,19 @@ import styles from './styles.module.css';
 import add from '/add.svg';
 import React from 'react';
 import { useState } from 'react';
-import ModalDetailProdcut from './ModalDetailProduct';
+import './allProductList.css'
+let allProduct = [
 
-let hotTrend = [
+    {
+        img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/834/10053681-dien-thoai-samsung-galaxy-a04-3gb-32gb-den-1.jpg",
+        name: "Samsung Galaxy A04 3GB/32GB Đen",
+        price: "2090000đ",
+        discount: "20",
+        chip: "MediaTek Helio P35 8 nhân",
+        sizeScreen: "6.5",
+        ram: "2",
+        rom: "12"
+    },
     {
         img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/product/829/dien-thoai-iphone-14-pro-max-128gb-tim-1.jpg",
         name: "iPhone 14 Pro Max 128GB Tím",
@@ -26,6 +36,17 @@ let hotTrend = [
         rom: "128"
     },
     {
+        img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/856/10054629-dien-thoai-samsung-galaxy-a14-5g-4gb-128gb-bac-1.jpg",
+        name: "Samsung Galaxy A14 5G 4GB/128GB Bạc",
+        price: "3.990.000đ",
+        discount: "23",
+        chip: "Mediatek MT6833 Dimensity 700 (7 nm)",
+        sizeScreen: "6.6",
+        ram: "4",
+        rom: "64"
+    },
+
+    {
         img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/827/10053257-dien-thoai-samsung-galaxy-a04s-4gb-64gb-xanh-1.jpg",
         name: "Samsung Galaxy A04s 4GB/64GB Xanh",
         price: "2990000đ",
@@ -34,6 +55,16 @@ let hotTrend = [
         sizeScreen: "6.5",
         ram: "6",
         rom: "64"
+    },
+    {
+        img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/827/10053348-dien-thoai-samsung-galaxy-a04s-4gb-64gb-den-1.jpg",
+        name: "Samsung Galaxy A04s 4GB/64GB Đen",
+        price: "2.990.000đ",
+        discount: "12",
+        chip: "Snapdragon ",
+        sizeScreen: "6.7",
+        ram: "6",
+        rom: "12"
     },
     {
         img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/832/10053536-dien-thoai-oppo-a77s-8gb-128gb-xanh-1.jpg",
@@ -46,6 +77,16 @@ let hotTrend = [
         rom: "128"
     },
     {
+        img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/821/10053177-dien-thoai-nokia-8210-4g-trang-1.jpg",
+        name: "Nokia 8210 4G Trắng",
+        price: "1.490.000đ",
+        discount: "12",
+        chip: "Unisoc T107 (22 nm)",
+        sizeScreen: "8.2",
+        ram: "1",
+        rom: "1"
+    },
+    {
         img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/856/10054597-dien-thoai-samsung-galaxy-a14-5g-4gb-128gb-do-1.jpg",
         name: "Samsung Galaxy A14 5G 4GB/128GB Đỏ",
         price: "3990000đ",
@@ -54,10 +95,21 @@ let hotTrend = [
         sizeScreen: "6",
         ram: "4",
         rom: "16"
-    }
+    },
+    {
+        img: "https://cdn.nguyenkimmall.com/images/thumbnails/180/180/detailed/834/10053681-dien-thoai-samsung-galaxy-a04-3gb-32gb-den-1.jpg",
+        name: "Samsung Galaxy A04 3GB/32GB Đen",
+        price: "2090000đ",
+        discount: "20",
+        chip: "MediaTek Helio P35 8 nhân",
+        sizeScreen: "6.5",
+        ram: "2",
+        rom: "12"
+    },
 ]
 
-const updatedHotTrend = hotTrend.map(item => {
+
+const updateallProduct = allProduct.map(item => {
     const priceAfterDiscount = parseFloat(item.price.replace("đ", "").replace(",", ""));
     const discountPercentage = parseFloat(item.discount);
     const originalPrice = priceAfterDiscount / (1 - (discountPercentage / 100));
@@ -68,48 +120,14 @@ const updatedHotTrend = hotTrend.map(item => {
     };
 });
 
-console.log(updatedHotTrend);
+console.log(updateallProduct);
 
-function Products() {
-
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [productDetail, setProductDetail] = useState({
-        img: "",
-        name: "",
-        price: "",
-        discount: "",
-        originalPrice: "",
-        quantity: 0,
-    });
-    const saveProductDetail = (product) => {
-        setProductDetail({
-            img: product.img,
-            name: product.name,
-            price: product.price,
-            discount: product.discount,
-            originalPrice: product.originalPrice,
-        });
-    };
-
-
-    function openModal() {
-        setIsOpen(true);
-    }
-
-    // function afterOpenModal() {
-    //     // references are now sync'd and can be accessed.
-    //     subtitle.style.color = '#f00';
-    // }
-
-    function closeModal() {
-        setIsOpen(false);
-    }
+function AllProducts() {
     return (
         <>
             <div className={`${styles.Content}`}>
-                <h3 style={{ width: 1350, display: `flex`, textAlign: `center`, paddingLeft: `150px` }}>TOP 10 ĐIỆN THOẠI ĐƯỢC YÊU THÍCH NHẤT</h3>
-                <div className={`${styles.productList}`}>
-                    {updatedHotTrend.map((product, index) => (
+                <div className='allproductList'>
+                    {updateallProduct.map((product, index) => (
                         <div key={index} className={`${styles.product}`}>
                             <img src={product.img} alt="" style={{ objectFit: `cover` }} />
                             <h4>{product.name}</h4>
@@ -126,20 +144,14 @@ function Products() {
                                 <img src={add} alt="" className={`${styles.Item}`} />
                                 Thêm vào danh sách
                             </a>
-
-                            {/* <button className={`${styles.btn1}`} onClick={() => {
-                                saveProductDetail(product)
-                                openModal()
-                            }}>Show Details</button> */}
                         </div>
                     )
                     )}
 
                 </div>
             </div>
-            <ModalDetailProdcut isOpen={modalIsOpen} product={productDetail} isClose={closeModal}></ModalDetailProdcut>
         </>
     )
 }
 
-export default Products
+export default AllProducts

@@ -1,0 +1,41 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.titleContent {
+    color: white;
+
+
+}
+
+.titleContent {
+    margin: 0px;
+    padding: 0px;
+    width: 1250px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: red;
+}
+
+.productContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.productForYou {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEDED;
+    max-width: 1440px;
+    margin-top: 25px;
+}

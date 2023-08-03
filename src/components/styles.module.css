@@ -8,7 +8,6 @@
     overflow: hidden;
     background-color: red;
     margin: 0px;
-    padding: 0px 15px
 }
 
 .HeaderContainer2 {
@@ -20,7 +19,6 @@
     align-items: center;
     overflow: hidden;
     margin: 0px;
-    padding: 0px 15px
 }
 
 .Logo {
@@ -41,6 +39,17 @@
 
 .HeaderItem {
     margin: 0px 15px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderItem3 {
+    margin: 0px 23px;
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -114,8 +123,8 @@ h5 {
 
 .imgItem {
     height: 100%;
-    object-fit: cover;
-    width: 660px;
+    width: 735px;
+    margin-right: 20px;
 }
 
 .bigImg {
@@ -124,12 +133,14 @@ h5 {
     width: auto;
     height: 350px;
     overflow: hidden;
+    gap: 10px;
 }
 
 .smallImg {
     height: 50%;
     width: 100%;
     object-fit: fill;
+
 }
 
 .Header3 {
@@ -146,6 +157,8 @@ h5 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: #EBEDED;
+    max-width: 1440px;
 
 }
 
@@ -160,7 +173,11 @@ h5 {
 }
 
 .Content {
-    background-color: #EBEDED;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Price {

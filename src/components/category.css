@@ -1,0 +1,16 @@
+.categoryContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+    padding-left: 100px;
+}
+
+.imgSort {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 10px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 25px;
+    font-size: 12px;
+}
